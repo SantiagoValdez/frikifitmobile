@@ -3,14 +3,14 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.groupweird.dias"
         version = "1.0.0">
-    <name>Queseparla</name>
+    <name>FrikiFit</name>
 
     <description>
-        Agenda parlamentaria
+        Corre y se el mejor!
     </description>
 
     <author href="http://www.groupweird.org" email="santiagovaldez@groupweird.com">
-        Tedic
+        Santiago Valdez
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
