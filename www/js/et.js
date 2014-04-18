@@ -3,10 +3,12 @@ var track_id = '';      // Name/ID of the exercise
 var watch_id = null;    // ID of the geolocation
 var tracking_data = []; // Array containing GPS position objects
 
+
+
 function gps_distance(lat1, lon1, lat2, lon2)
 {
   // http://www.movable-type.co.uk/scripts/latlong.html
-    var R = 6371; // km
+    var R = 6378.16; // km
     var dLat = (lat2-lat1) * (Math.PI / 180);
     var dLon = (lon2-lon1) * (Math.PI / 180);
     var lat1 = lat1 * (Math.PI / 180);
@@ -34,6 +36,19 @@ function getHtmlForOponent(oponent){
 }
 
 
+function esExacto(pos1,pos2){
+	
+	if (pos1 != null && pos2 != null){
+		var dist = gps_distance(pos1.coords.latitude, pos1.coords.longitude, pos2.coords.latitude, pos2.coords.longitude);
+
+		if( dist > 0.05 ){
+			console.log("Dist:" + dist);		
+			return false
+		}
+	}
+	return true
+}
+
 function calcularPuntos(t){
 
   var data = t.data;
@@ -52,10 +67,10 @@ function calcularPuntos(t){
   var kms = 0 + (total_km.toFixed(2));
 
   //Vida 50 HP por KM
-  var hps = 0 + (50 * Number(kms).toFixed(0));
+  var hps = 0 + (50 * Number(kms).toFixed(2));
 
   //Experiencia 1 XP por KM
-  var xps = 0 + (25 * Number(kms).toFixed(0));
+  var xps = 0 + (25 * Number(kms).toFixed(2));
 
    var id = localStorage["idUsuario"]
 
@@ -132,7 +147,7 @@ $(function(){
     // Start tracking the User
 
     navigator.geolocation.getCurrentPosition(function(position) {
-      tracking_data.push(position);
+      //tracking_data.push(position);
       console.log("Inicial...")
       console.log(tracking_data);
       
@@ -150,10 +165,24 @@ $(function(){
         // Success
         function(position){
             console.log("Watch pos...");
-            tracking_data.push(position);
-            console.log(tracking_data);
+            
+	    if ( esExacto( tracking_data[tracking_data.length - 1], position ) ) {
+	    	tracking_data.push(position);
+            }
+	    console.log(tracking_data);
 
-            $("#puntos").empty().append("<br> Puntos ->" + tracking_data.length );
+	    var data = tracking_data;
+	    var total_km = 0;
+	    for(i = 0; i < data.length; i++){
+	       
+	      if(i == (data.length - 1)){
+		  break;
+	      }
+	       
+	      total_km += gps_distance(data[i].coords.latitude, data[i].coords.longitude, data[i+1].coords.latitude, data[i+1].coords.longitude);
+	    }
+
+            $("#puntos").empty().append("<br> Distancia -> <b>" + total_km + "</b> km ");
 
         },
          
