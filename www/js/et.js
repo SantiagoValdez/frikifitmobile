@@ -19,7 +19,7 @@ function gps_distance(lat1, lon1, lat2, lon2)
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
     var d = R * c;
      
-    return d;
+    return d * 1000;
 }
 
 
@@ -41,7 +41,7 @@ function esExacto(pos1,pos2){
 	if (pos1 != null && pos2 != null){
 		var dist = gps_distance(pos1.coords.latitude, pos1.coords.longitude, pos2.coords.latitude, pos2.coords.longitude);
 
-		if( dist > 0.05 ){
+		if( dist > 10 ){
 			console.log("Dist:" + dist);		
 			return false
 		}
@@ -64,7 +64,7 @@ function calcularPuntos(t){
       total_km += gps_distance(data[i].coords.latitude, data[i].coords.longitude, data[i+1].coords.latitude, data[i+1].coords.longitude);
   }
    
-  var kms = 0 + (total_km.toFixed(2));
+  var kms = 0 + (total_km.toFixed(2) / 1000);
 
   //Vida 50 HP por KM
   var hps = 0 + (50 * Number(kms).toFixed(2));
@@ -182,7 +182,7 @@ $(function(){
 	      total_km += gps_distance(data[i].coords.latitude, data[i].coords.longitude, data[i+1].coords.latitude, data[i+1].coords.longitude);
 	    }
 
-            $("#puntos").empty().append("<br> Distancia -> <b>" + total_km + "</b> km ");
+            $("#puntos").empty().append("<br> Distancia -> <b>" + total_km + "</b> metros ");
 
         },
          
