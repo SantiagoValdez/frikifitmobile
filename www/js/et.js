@@ -103,7 +103,7 @@ $(function(){
     // $("#home_network_button").text('No Internet Access')
     //              .attr("data-icon", "delete")
     //              .button('refresh');
-    alert("No tiene acceso a interwebz");
+    //alert("No tiene acceso a interwebz");
   }else{
   	$("#home_network_button").text('Tenes interweb :D');
   }
@@ -153,7 +153,7 @@ $(function(){
             tracking_data.push(position);
             console.log(tracking_data);
 
-            $("#puntos").append("<br>->" + tracking_data.length);
+            $("#puntos").empty().append("<br> Puntos ->" + tracking_data.length );
 
         },
          
@@ -163,7 +163,7 @@ $(function(){
         },
          
         // Settings
-        { frequency: 1000, enableHighAccuracy: false });
+        { frequency: 1000, enableHighAccuracy: true });
      
     // Tidy up the UI
     track_id = $("#track_id").val();
