@@ -22,6 +22,9 @@
 
     <icon src="icon.png" />
 
+    <gap:splash src="splash.png" />
+
+
     <feature name="http://api.phonegap.com/1.0/battery"/>
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
