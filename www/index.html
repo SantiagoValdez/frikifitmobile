@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name=description content="">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap CSS -->
+		<link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+		<link rel="stylesheet" type="text/css" href="./css/base.css">
+	
+		<script>
+			function setId(){
+				console.log("set id");
+				var id = $("#id").val();
+				console.log(id);
+				localStorage["idUsuario"] = id;
+			}
+		</script>
+
+	</head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">FrikiFit</a>
+			</div>
+		
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			</nav>
+
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Welcome to FrikiFit! </h1>
+				<p>In FrikiFit you control a space invader from Planet Sportia.
+					A Sportian needs to exercise in order to live, that's where
+					you come in! Help your Sportian to be the strongest on Earth!
+
+				</p>
+				<p>
+					<a class="btn btn-primary btn-lg" href="home.html">I'm ready to rumble!</a>
+				</p>
+			</div>
+		</div>
+
+
+		<input type="text" id="id" placeholder="id" name="id">
+
+		<a href="#" class="btn btn-primary" onClick="setId();">setear</a>
+
+		<!-- jQuery -->
+		<script src="./js/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="./js/bootstrap.min.js"></script>
+
+	</body>
+</html>

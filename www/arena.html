@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name=description content="">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap CSS -->
+		<link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/base.css">
+
+	</head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">FrikiFit</a>
+			</div>
+		
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			</nav>
+
+
+			<!--- ITEMS ...-->
+			<div class="modal fade" id="modal-item">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Purchase some items!</h4>
+						</div>
+						<div class="modal-body">
+						
+							<img src="./img/items.png">
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		
+
+			 <div class="modal fade" id="modal-resultado">
+			 	<div class="modal-dialog">
+			 		<div class="modal-content">
+			 			<div class="modal-header">
+			 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			 				<h4 class="modal-title" id="resultado-titulo"></h4>
+			 			</div>
+			 			<div class="modal-body">
+			 				<p id ="resultado-mensaje"></p>
+			 			</div>
+			 			<div class="modal-footer">
+			 				<a href="home.html" class="btn btn-default">Close</a>
+			 			</div>
+			 		</div><!-- /.modal-content -->
+			 	</div><!-- /.modal-dialog -->
+			 </div><!-- /.modal -->
+
+		<div class="container">
+		
+			<div>
+				
+
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<u id="oponent-name">Oponent name</u>
+						<br>
+						HP
+						<div class="progress progress-striped active">
+						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" id="enemy-hp">
+						  </div>
+						</div>
+
+					</div>
+
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<img id="enemy-attack"src="./img/attack5.gif" width="200px;" class="attack" style="display:none;">
+						<img id ="enemy-sprite-still" src="" class="player-sprite" >
+						
+					</div>
+
+				</div>
+
+
+				<div class="row">
+					
+				</div>
+
+
+				<!--- MI PERSONAJE -->
+
+				<div class="row" >
+					
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<img id="my-attack"src="./img/attack5.gif" width="200px;" class="attack" style="display:none;">
+						<img id ="my-sprite-still" src="" class="player-sprite" >
+						
+					</div>
+
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-top:20%;">
+						<u id="my-name"></u>
+						<br>
+						HP
+						<div class="progress progress-striped active">
+						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" id="my-hp">
+						  </div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="menu-batalla">
+					<div class="row">
+					
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">	
+							<a onClick="attack();" class="btn btn-primary btn-lg" style="width:200px;
+							margin:10px; padding-top:5px;" id="attack-btn">
+							<i class="fa fa-medkit fa-2x"></i>
+							<br>
+							Atack!
+							</a>
+						</div>
+						
+						<div class="row">
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							</div>
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+								
+								<a class="btn btn-primary btn-lg" id="btn-attack" data-toggle="modal" href='#modal-item'>
+									<i class="fa fa-medkit fa-2x"></i>
+								</a>
+							</div>
+
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+								<a onClick="animarAtaque();" class="btn btn-primary btn-lg" id="btn-run">
+									<i class="fa fa-rocket fa-2x"></i>
+								</a>
+							</div>
+
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="btn-item">
+							</div>
+						</div>
+
+						
+						
+					</div>
+
+					
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- jQuery -->
+		<script src="./js/jquery.js"></script>
+		<script src="./js/et.js"></script>
+		<script src="./js/arena.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="./js/bootstrap.min.js"></script>
+
+
+
+		
+	</body>
+</html>

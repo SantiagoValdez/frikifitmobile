@@ -1,0 +1,83 @@
+
+
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {float:none;}
+
+.menu{
+	width: 100%;
+	text-align: center;
+}
+
+
+.principal{
+
+	background: url('../img/frikifit.png');
+}
+
+.btn-history{
+	width: 80%;
+}
+
+
+
+.menu-batalla{
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: rgba(0,0,0,0.5);
+	border-radius: 10px;
+
+}
+
+.attack{
+	z-index:99999;
+	position: fixed;
+	padding-left: 2%;
+	width: 300px;
+
+}
+
+@media all and (max-width: 720px) {
+.player-sprite{
+	width: 150px;
+
+	
+	}
+	h1{
+		font-size: 26px;
+	}
+
+.attack{
+	z-index:99999;
+	position: fixed;
+	padding-left: 2%;
+	width: 200px;
+
+}
+
+.stat-personaje{
+	background: url('../img/fondo_home.gif');
+	border-radius: 5px;
+}
+
+}
+
+@media all and (min-width: 720px) {
+.player-sprite{
+	width: 250px;
+
+}
+
+.stat-personaje{
+	background: url('../img/fondo_home.gif') no-repeat ;
+	background-position: right;
+	border-radius: 5px;
+
+}
+	
+}
